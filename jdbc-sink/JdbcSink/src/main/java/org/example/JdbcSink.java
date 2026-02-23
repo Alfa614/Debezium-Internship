@@ -14,10 +14,6 @@ import java.sql.PreparedStatement;
 import java.sql.Statement;
 import java.util.List;
 
-/**
- * Custom JDBC sink for Debezium Server.
- * Parses Debezium JSON events and applies them to PostgreSQL.
- */
 @Dependent
 @Named("jdbc")
 public class JdbcSink implements ChangeConsumer<ChangeEvent<String, String>> {
@@ -27,7 +23,7 @@ public class JdbcSink implements ChangeConsumer<ChangeEvent<String, String>> {
 
     public JdbcSink() {
         try {
-            // Hardcode for now (we can move to properties later)
+            
             String url = "jdbc:postgresql://localhost:5432/postgres";
             String user = "postgres";
             String password = "Alfaiz123";
